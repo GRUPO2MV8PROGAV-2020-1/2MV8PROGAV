@@ -8,8 +8,9 @@ Rectangulo::Rectangulo():FiguraGeometrica("Rectangulo"),base(0),altura(0){
 }
 #endif /*CONSTRUCTOR_PRED*/
 
-Rectangulo::Rectangulo(float base,float altura1):
-FiguraGeometrica("Rectangulo"),altura(altura1)
+static std::string rec_name="Rectangulo";
+Rectangulo::Rectangulo(float base,float altura1)
+:FiguraGeometrica(rec_name),altura(altura1)
 {
   this->base=base;
   intId=++cuentaDRectangulos;
@@ -51,7 +52,7 @@ ostream operator<<(ostream salida,Rectangulo objR)
 ostream& operator<<(ostream& salida,Rectangulo& objR)
 #endif /*NOREFERENCE_ERROR*/
 {
-  salida<<figure_name<<" "<<objR.intId<<": "
+  salida<<objR.figure_name<<" "<<objR.intId<<": "
         <<"base="<<objR.base<<", altura="<<objR.altura;
   return salida;
 }

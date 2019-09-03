@@ -1,4 +1,6 @@
 /* Rectangulo.h */
+#ifndef RECTANGULO
+#define RECTANGULO
 #include <iostream>
 #include "FiguraGeometrica.h"
 using namespace std;
@@ -29,4 +31,5 @@ friend ostream operator<<(ostream,Rectangulo);
 friend ostream& operator<<(ostream&,Rectangulo&);
 #endif /*NOREFERENCE_ERROR*/
 };/* end class Rectangulo */
+#endif /*RECTANGULO*/
 

@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc,char *argv[])
 {
  // FiguraGeometrica FG[2];
-  std::string figName[]={"Rectangulo","Circulo"};
+ // std::string figName[]={"Rectangulo","Circulo"};
   Rectangulo R(30.0f);
   Circulo C(10.0f);
   cout<<R<<endl;
