@@ -11,6 +11,7 @@ public:
   int intId;
   virtual float area();
   Circulo(float);
+virtual std::string mostrar();
 friend std::basic_ostream<char>& operator<<(std::basic_ostream<char>&,
 Circulo&);
 };/* end class Circulo */

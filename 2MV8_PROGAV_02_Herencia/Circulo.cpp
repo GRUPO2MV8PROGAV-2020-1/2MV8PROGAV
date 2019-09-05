@@ -14,6 +14,14 @@ Circulo::Circulo(float r)
   intId=++cuentaDCirculos;
 }
 
+std::string Circulo::mostrar()
+{
+  char char_array_radio[32];
+  sprintf(char_array_radio,"%.2f",radio);
+  std::string str_radio=string(char_array_radio);
+  return figure_name+": radio="+str_radio;
+}
+
 std::basic_ostream<char>& operator<<(std::basic_ostream<char>& out, 
 Circulo& ObjCir)
 {

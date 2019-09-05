@@ -1,9 +1,9 @@
 /* TestHerencia.cpp */
 #include <iostream>
+using namespace std;
 #include "FiguraGeometrica.h"
 #include "Rectangulo.h"
 #include "Circulo.h"
-using namespace std;
 
 int main(int argc,char *argv[])
 {

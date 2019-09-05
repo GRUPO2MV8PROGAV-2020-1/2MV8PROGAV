@@ -57,3 +57,14 @@ ostream& operator<<(ostream& salida,Rectangulo& objR)
   return salida;
 }
 
+std::string Rectangulo::mostrar()
+{
+  char char_array_base[32],char_array_altura[32];
+  sprintf(char_array_base,"%.2f",base);
+  sprintf(char_array_altura,"%.2f",altura);
+  std::string str_base=string(char_array_base);
+  std::string str_altura=string(char_array_altura);
+  return figure_name+": base="+str_base+" altura="+str_altura;
+}
+
+

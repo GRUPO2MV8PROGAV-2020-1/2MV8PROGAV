@@ -28,6 +28,7 @@ public:
 #ifdef NOREFERENCE_ERROR
 friend ostream operator<<(ostream,Rectangulo);
 #else
+virtual std::string mostrar();
 friend ostream& operator<<(ostream&,Rectangulo&);
 #endif /*NOREFERENCE_ERROR*/
 };/* end class Rectangulo */
