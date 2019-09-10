@@ -64,7 +64,8 @@ std::string Rectangulo::mostrar()
   sprintf(char_array_altura,"%.2f",altura);
   std::string str_base=string(char_array_base);
   std::string str_altura=string(char_array_altura);
-  return figure_name+": base="+str_base+" altura="+str_altura;
+  //return figure_name+": base="+str_base+" altura="+str_altura;
+  return figure_name+": base="+char_array_base+" altura="+str_altura;
 }
 
 

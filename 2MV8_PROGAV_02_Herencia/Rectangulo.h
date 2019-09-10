@@ -1,7 +1,6 @@
 /* Rectangulo.h */
 #ifndef RECTANGULO
 #define RECTANGULO
-#include <iostream>
 #include "FiguraGeometrica.h"
 using namespace std;
 
