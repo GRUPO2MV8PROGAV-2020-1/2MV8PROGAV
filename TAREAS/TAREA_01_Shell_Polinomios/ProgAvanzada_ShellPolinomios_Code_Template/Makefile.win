@@ -1,0 +1,63 @@
+# Project: Project2
+# Makefile created by Dev-C++ 4.9.9.2 Built at I. P. N. (México) 2018.05.11.11.04
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Directory_entry.o Pol_Directory.o Polinomio.o Rac.o String_Tokenizer.o ShellPolinomios.o $(RES)
+LINKOBJ  = Directory_entry.o Pol_Directory.o Polinomio.o Rac.o String_Tokenizer.o ShellPolinomios.o $(RES)
+LIBS =   
+INCS = 
+CXXINCS = 
+BIN  = Proyecto_Shell_Operaciones_con_Polinomios.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Proyecto_Shell_Operaciones_con_Polinomios.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Proyecto_Shell_Operaciones_con_Polinomios.exe" $(LIBS)
+
+Directory_entry.o: Directory_entry.cpp
+	$(CPP) -c Directory_entry.cpp -o Directory_entry.o $(CXXFLAGS)
+
+Directory_entry.i: Directory_entry.cpp
+	$(CPP) -E Directory_entry.cpp -o Directory_entry.i $(CXXFLAGS)
+
+Pol_Directory.o: Pol_Directory.cpp
+	$(CPP) -c Pol_Directory.cpp -o Pol_Directory.o $(CXXFLAGS)
+
+Pol_Directory.i: Pol_Directory.cpp
+	$(CPP) -E Pol_Directory.cpp -o Pol_Directory.i $(CXXFLAGS)
+
+Polinomio.o: Polinomio.cpp
+	$(CPP) -c Polinomio.cpp -o Polinomio.o $(CXXFLAGS)
+
+Polinomio.i: Polinomio.cpp
+	$(CPP) -E Polinomio.cpp -o Polinomio.i $(CXXFLAGS)
+
+Rac.o: Rac.cpp
+	$(CPP) -c Rac.cpp -o Rac.o $(CXXFLAGS)
+
+Rac.i: Rac.cpp
+	$(CPP) -E Rac.cpp -o Rac.i $(CXXFLAGS)
+
+String_Tokenizer.o: String_Tokenizer.cpp
+	$(CPP) -c String_Tokenizer.cpp -o String_Tokenizer.o $(CXXFLAGS)
+
+String_Tokenizer.i: String_Tokenizer.cpp
+	$(CPP) -E String_Tokenizer.cpp -o String_Tokenizer.i $(CXXFLAGS)
+
+ShellPolinomios.o: ShellPolinomios.cpp
+	$(CPP) -c ShellPolinomios.cpp -o ShellPolinomios.o $(CXXFLAGS)
+
+ShellPolinomios.i: ShellPolinomios.cpp
+	$(CPP) -E ShellPolinomios.cpp -o ShellPolinomios.i $(CXXFLAGS)

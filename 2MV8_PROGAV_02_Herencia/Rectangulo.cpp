@@ -68,4 +68,8 @@ std::string Rectangulo::mostrar()
   return figure_name+": base="+char_array_base+" altura="+str_altura;
 }
 
+int Rectangulo::get_cuentaDRectangulos()
+{
+  return cuentaDRectangulos;
+}
 

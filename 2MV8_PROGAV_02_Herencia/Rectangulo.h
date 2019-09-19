@@ -1,4 +1,6 @@
 /* Rectangulo.h */
+/** @version:2019.09.17
+ */
 #ifndef RECTANGULO
 #define RECTANGULO
 #include "FiguraGeometrica.h"
@@ -30,6 +32,7 @@ friend ostream operator<<(ostream,Rectangulo);
 virtual std::string mostrar();
 friend ostream& operator<<(ostream&,Rectangulo&);
 #endif /*NOREFERENCE_ERROR*/
+  static int get_cuentaDRectangulos();
 };/* end class Rectangulo */
 #endif /*RECTANGULO*/
 
