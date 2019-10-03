@@ -1,0 +1,2 @@
+:se nu
+:syntax on
