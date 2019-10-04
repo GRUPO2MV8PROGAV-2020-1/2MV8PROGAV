@@ -75,6 +75,7 @@ int main(int argc,char *argv[]){
           Pol=new Polinomio(pcoef.size()-1,RacPt);
           newpol=Pol->string_show();
           the_directory.add_or_change_entry(ms,newpol);
+          pcoef.clear();
       }else{
       /* En buf hay un '=' y tambi\'en hay un '+', \'o un '-', \'o un '*' */
       /* La variable del lado izquierdo del signo de = */
