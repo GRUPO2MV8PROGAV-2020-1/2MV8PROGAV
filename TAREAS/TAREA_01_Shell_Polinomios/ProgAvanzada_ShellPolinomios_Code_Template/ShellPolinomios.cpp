@@ -7,6 +7,8 @@ using namespace std;
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>     /*memset()*/
+//#define NDEBUG
+#include <assert.h>
 #include "Pol_Directory.h"
 #include "String_Tokenizer.h"
 #include "Polinomio.h"
@@ -80,7 +82,7 @@ int main(int argc,char *argv[]){
       /* En buf hay un '=' y tambi\'en hay un '+', \'o un '-', \'o un '*' */
       /* La variable del lado izquierdo del signo de = */
         get_var_name(buf,varname);
-        ms=string(varname);
+        ms=string(varname);//cout<<"2019.10.08: "<<ms<<endl;
         /*obtener cadena despu\'es del = */
         ms1=get_string_after_equal(buf);//cout<<"="<<ms1<<endl;
         /*identificar las variables operandos*/
@@ -129,7 +131,7 @@ int main(int argc,char *argv[]){
   }//end while(getcmd(buf, sizeof(buf)) >= 0)
   printf("Exiting now...\n");
   do_save(the_directory); 
-  system("PAUSE");
+  system("pause");
   return 0;
 }//end main()
 
@@ -311,11 +313,11 @@ void do_suma(Pol_Directory& the_directory,string& op1,string& op2,string& var){
 	vector<string> arr1;
 	vector<string> arr2;
 	while(tokenizer1.has_more_tokens()){
-        arr1.push_back(tokenizer1.next_token());
-    }//end while()
+          arr1.push_back(tokenizer1.next_token());
+        }//end while()
 	while(tokenizer2.has_more_tokens()){
-        arr2.push_back(tokenizer2.next_token());
-    }//end while()
+          arr2.push_back(tokenizer2.next_token());
+        }//end while()
 
 	int num,den;	/*numerador,denominador*/
 	Rac *RacPt1=new Rac[arr1.size()],*RacPt2=new Rac[arr2.size()];
@@ -341,7 +343,7 @@ void do_suma(Pol_Directory& the_directory,string& op1,string& op2,string& var){
 	string resultado=PolResult.string_show();
 
 	the_directory.add_or_change_entry(string_pol_suma,resultado);	
-}
+}//end do_suma()
 
 void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
 	string operando1=op1;
