@@ -315,6 +315,3 @@ void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
 	the_directory.add_or_change_entry(string_pol_resta,resultado);
 }
 
-void do_multiplicacion(Pol_Directory& the_directory,string& op1,string& op2,string& var){
-    /* INCLUDE REMAINING CODE HERE */
-}

@@ -18,8 +18,6 @@ using namespace std;
 #define TAMDBUF       100
 
 using std::cout;
-//#define NDEBUG
-#include <assert.h>
 #include <stdio.h>
 #include "Polinomio.h"
 #define DISC00
@@ -29,9 +27,16 @@ void do_suma(Pol_Directory& the_directory,string& op1,string& op2,string& var){
 	string operando1=op1;
 	string operando2=op2;
 	string string_pol_suma=var;
+#ifndef NDEBUG
+  cout<<"\nIniciando depuraci\\'on 2019.10.22\n";
+#endif /*NDEBUG*/
 
 	string coeffs1=the_directory.lookup_entry(operando1);
 	string coeffs2=the_directory.lookup_entry(operando2);
+#ifndef NDEBUG
+  cout<<"\ncoeffs1:"<<coeffs1<<endl;
+  cout<<"\ncoeffs2:"<<coeffs2<<endl;
+#endif /*NDEBUG*/
 
 	String_Tokenizer tokenizer1(coeffs1, ":");
 	String_Tokenizer tokenizer2(coeffs2, ":");
@@ -43,6 +48,21 @@ void do_suma(Pol_Directory& the_directory,string& op1,string& op2,string& var){
 	while(tokenizer2.has_more_tokens()){
           arr2.push_back(tokenizer2.next_token());
         }//end while()
+#ifndef NDEBUG
+class F1{
+public:
+  static void f1(vector<string> arr){
+    for(int i=0;i<arr.size();i++){
+      cout<<arr[i]<<"    ";
+    }
+    cout<<endl;
+  }
+};//end class F1
+  cout<<"arr1: ";
+  F1::f1(arr1);
+  cout<<"arr2: ";
+  F1::f1(arr2);
+#endif /*NDEBUG*/
 
 	int num,den;	/*numerador,denominador*/
 	Rac *RacPt1=new Rac[arr1.size()],*RacPt2=new Rac[arr2.size()];
@@ -56,6 +76,9 @@ void do_suma(Pol_Directory& the_directory,string& op1,string& op2,string& var){
 		
 		stringIntDen=tokenizerForRac.next_token();
 		den=atoi(stringIntDen.c_str());
+#ifndef NDEBUG
+  cout<<"\ni="<<i<<":   num:"<<num<<",   den:"<<den<<endl;
+#endif /*NDEBUG*/
 		
 		*(RacPt1+i)=Rac(num,den);
 	}
