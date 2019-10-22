@@ -21,7 +21,7 @@ using std::cout;
 #include <stdio.h>
 #include "Polinomio.h"
 #define DISC00
-#ifdef DISC00
+#ifndef DISC2012090525
 /*Stub*/
 void do_multiplicacion(Pol_Directory& the_directory,
                        string& op1,
