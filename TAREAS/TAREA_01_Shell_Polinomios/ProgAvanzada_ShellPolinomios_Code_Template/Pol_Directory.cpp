@@ -61,7 +61,7 @@ std::string Pol_Directory::add_or_change_entry(const std::string& var_name,const
 }
 
 /** Adicionar un nuevo par nombre-coeffs al directorio.
-    @param name El nombre de la variable a seragregada
+    @param name El nombre de la variable a ser agregada
 	@param coeffs Los coeficientes de la variable a ser agregada 
 */
 void Pol_Directory::add(const std::string& var_name,const std::string& coeffs){

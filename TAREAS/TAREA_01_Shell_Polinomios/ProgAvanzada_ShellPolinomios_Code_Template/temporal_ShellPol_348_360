@@ -1,0 +1,13 @@
+void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
+	string operando1=op1;
+	string operando2=op2;
+	string string_pol_resta=var;
+        string resultado="";
+
+	string coeffs1=the_directory.lookup_entry(operando1);
+	string coeffs2=the_directory.lookup_entry(operando2);
+
+    /* INCLUDE REMAINING CODE HERE */
+
+	the_directory.add_or_change_entry(string_pol_resta,resultado);
+}
