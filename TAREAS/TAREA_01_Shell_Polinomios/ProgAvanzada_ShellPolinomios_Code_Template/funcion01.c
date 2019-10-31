@@ -8,10 +8,6 @@ using std::cout;
 #include <stdio.h>
 #include "Polinomio.h"
 #define DISC01
-/**
- * Calcula la cantidad de segundos transcurridos en el d\'ia 
- * equivalentes al inicio del intervalo.
- */
 #ifndef DISC01
 /*Stub*/
 #else
