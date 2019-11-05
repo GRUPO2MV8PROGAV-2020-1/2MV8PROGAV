@@ -10,11 +10,20 @@ using std::cout;
 #define DISC01
 #ifndef DISC01
 /*Stub*/
+void do_multiplicacion(Pol_Directory& the_directory,
+                       string& op1,
+                       string& op2,
+                       string& var){
+    /* INCLUDE REMAINING CODE HERE */
+}
 #else
-//Polinomio& Polinomio::operator-(Polinomio& PolObj)
-//{
-//  //WRITE YOUR CODE HERE
-//}
+void do_multiplicacion(Pol_Directory& the_directory,
+                       string& op1,
+                       string& op2,
+                       string& var){
+    /* INCLUDE REMAINING CODE HERE */
+}
+#else
 #endif
 
 
