@@ -78,6 +78,10 @@ int main(int argc,char *argv[]){
           newpol=Pol->string_show();
           the_directory.add_or_change_entry(ms,newpol);
           pcoef.clear();
+#ifndef NDEBUG
+        printf("\npcoef.clear() DONE!...\n");
+#endif /*NDEBUG*/
+
       }else{
       /* En buf hay un '=' y tambi\'en hay un '+', \'o un '-', \'o un '*' */
       /* La variable del lado izquierdo del signo de = */
@@ -301,17 +305,19 @@ string get_string_after_equal(char buf[TAMDBUF]){
 }
 
 
-void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
-	string operando1=op1;
-	string operando2=op2;
-	string string_pol_resta=var;
-        string resultado="";
-
-	string coeffs1=the_directory.lookup_entry(operando1);
-	string coeffs2=the_directory.lookup_entry(operando2);
-
-    /* INCLUDE REMAINING CODE HERE */
-
-	the_directory.add_or_change_entry(string_pol_resta,resultado);
-}
-
+//void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
+//	string operando1=op1;
+//	string operando2=op2;
+//	string string_pol_resta=var;
+//        string resultado="";
+//
+//	string coeffs1=the_directory.lookup_entry(operando1);
+//	string coeffs2=the_directory.lookup_entry(operando2);
+//
+//    /* INCLUDE REMAINING CODE HERE */
+//
+//	the_directory.add_or_change_entry(string_pol_resta,resultado);
+//}
+//
+//
+//
