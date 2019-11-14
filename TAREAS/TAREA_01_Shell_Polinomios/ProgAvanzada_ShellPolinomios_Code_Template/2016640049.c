@@ -34,6 +34,7 @@ Polinomio composicion(Polinomio &pol1,Polinomio &pol2){
           
         }
         m++;
+	ss= multi(pol1,4); //MULTIPLICAR POR COEFICIENTE DE POLINOMIOS
         ss = suma(multi(pol1,pol1),ss);
     }
     Polinomio res;
