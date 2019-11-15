@@ -1,7 +1,8 @@
 /** Polinomio.cpp */
-//#define NDEBUG
+#define NDEBUG
 #include <iostream>
 using std::cout;
+//#define NDEBUG
 #include <assert.h>
 #include "Polinomio.h"
 /** Operador referencia a
@@ -50,44 +51,67 @@ Polinomio& Polinomio::operator+(Polinomio& PolObj)
 
 Polinomio& Polinomio::operator-(Polinomio& PolObj)
 {
-	int grad;
-	Polinomio& ResPol=PolObj;//Polinomio P(1,new Rac[2]);
-	if(grado==PolObj.grado){//cout<<"AQUI"<<endl;
-      Polinomio ResP1(grado,new Rac[grado+1]);
-      ResPol=ResP1;
-      for(int i=0;i<grado+1;i++){
-        (ResPol.A+i)->n=(A+i)->n;
-        (ResPol.A+i)->d=(A+i)->d;
-      }
-      for(int i=0;i<grado+1;i++){
-			*(ResPol.A+i)=*(A+i)-*(PolObj.A+i);//cout<<"AQUI: "<<*(A+i)<<" - "<<*(PolObj.A+i)<<endl;
-	  }
-	}else{
-	  grad=maximo(grado,PolObj.grado);
-	  Polinomio ResP(grad,new Rac[grad+1]);
-	  ResPol=ResP;
-	  if(grado==grad){/*si el obj implicito es el de mayor grado*/
-		for(int i=0;i<grado+1;i++){
-			(ResPol.A+i)->n=(A+i)->n;
-			(ResPol.A+i)->d=(A+i)->d;
-		}
-	  }else{/*si el segundo operando es el de mayor grado*/
-		for(int i=0;i<PolObj.grado+1;i++){
-			(ResPol.A+i)->n=(-1)*((PolObj.A+i)->n);
-			(ResPol.A+i)->d=(PolObj.A+i)->d;
-		}
-      }
-	  if(grado==grad){/*si el objeto implicito es el polinomio de mayor grado*/
-		for(int i=PolObj.grado;i>=0;i--){
-			*(ResPol.A+ResPol.grado-(PolObj.grado-i))=*(ResPol.A+ResPol.grado-(PolObj.grado-i))-*(PolObj.A+i);
-		}
-	  }else{/*si el segundo operando es el de mayor grado*/
-		for(int i=grado;i>=0;i--){
-			*(ResPol.A+ResPol.grado-(grado-i))=*(ResPol.A+ResPol.grado-(grado-i))+*(A+i);
-		}
-	  }
+  int grad;
+  //Polinomio& ResPol=PolObj;//Polinomio P(1,new Rac[2]);
+  
+  if(grado==PolObj.grado){//cout<<"AQUI"<<endl;
+#ifndef NDEBUG
+  printf("Los polinomios tienen el mismo grado...\n"); 
+#endif /*NDEBUG*/
+    Polinomio ResP1(grado,new Rac[grado+1]);
+    //ResPol=ResP1;
+    Polinomio& ResPol=ResP1;//
+    for(int i=0;i<grado+1;i++){
+      (ResPol.A+i)->n=(A+i)->n;
+      (ResPol.A+i)->d=(A+i)->d;
     }
-	return ResPol;
+#ifndef NDEBUG
+  cout<<"ResPol=\n";
+  cout<<ResPol<<endl; 
+#endif /*NDEBUG*/
+    for(int i=0;i<grado+1;i++){
+#ifndef NDEBUG
+      cout<<"AQUI: "<<*(ResPol.A+i)<<" - "<<*(PolObj.A+i)<<endl;
+#endif /*NDEBUG*/
+	*(ResPol.A+i)=*(ResPol.A+i)-*(PolObj.A+i);//
+    }
+#ifndef NDEBUG
+  cout<<"ResPol=\n";
+  cout<<ResPol<<endl; 
+#endif /*NDEBUG*/
+    return ResPol;
+  }else{
+    grad=maximo(grado,PolObj.grado);
+    Polinomio ResP(grad,new Rac[grad+1]);
+    Polinomio& ResPol_1=ResP;
+    if(grado==grad){/*si el obj implicito es el de mayor grado*/
+      for(int i=0;i<grado+1;i++){
+	(ResPol_1.A+i)->n=(A+i)->n;
+	(ResPol_1.A+i)->d=(A+i)->d;
+      }
+    }else{/*si el segundo operando es el de mayor grado*/
+      for(int i=0;i<PolObj.grado+1;i++){
+	(ResPol_1.A+i)->n=(-1)*((PolObj.A+i)->n);
+	(ResPol_1.A+i)->d=(PolObj.A+i)->d;
+      }
+      return ResPol_1;
+    }
+    if(grado==grad){/*si el objeto implicito es el polinomio de mayor grado*/
+      Polinomio& ResPol_2=*this;
+      for(int i=PolObj.grado;i>=0;i--){
+        *(ResPol_2.A+ResPol_2.grado-(PolObj.grado-i))=*(ResPol_2.A+ResPol_2.grado-(PolObj.grado-i))-*(PolObj.A+i);
+      }
+      return ResPol_2;
+    }else{/*si el segundo operando es el de mayor grado*/
+      Polinomio& ResPol_3=PolObj;
+      for(int i=grado;i>=0;i--){
+	*(ResPol_3.A+ResPol_3.grado-(grado-i))=*(ResPol_3.A+ResPol_3.grado-(grado-i))+*(A+i);
+      }
+      return ResPol_3;
+    }
+    
+  }
+  
 }
 
 
