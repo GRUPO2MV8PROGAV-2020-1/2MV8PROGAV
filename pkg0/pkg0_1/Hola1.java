@@ -24,9 +24,14 @@ public class Hola1 {
     }
     public static void main(String[] args) {
         Hola1 H1=new Hola1();
-        H1.S="GRUPO 2MV3";
-        System.out.println(H1+" Martes 22 de enero de 2019"+1);
+        H1.S="GRUPO 2MV8";
+        System.out.println(H1+" Martes 19 de noviembre de 201"+9);
         H1=new Hola1("2MV3");
         System.out.println(H1);
-    }
+        H1.scan=new Scanner(System.in);
+        System.out.println("Escriba una línea");
+        String nstring=H1.scan.nextLine();
+        Hola1 H2=new Hola1(nstring);
+        System.out.println("H2:"+H2);
+    }//end main()
 }//end class pkg0.pkg0_1.Hola1
