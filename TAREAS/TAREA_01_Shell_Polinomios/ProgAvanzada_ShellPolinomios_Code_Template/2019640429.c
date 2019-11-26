@@ -20,7 +20,7 @@ using namespace std;
 using std::cout;
 #include <stdio.h>
 #include "Polinomio.h"
-#define DISC01
+//#define DISC01
 #ifdef DISC01
 /*Stub*/
 void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
