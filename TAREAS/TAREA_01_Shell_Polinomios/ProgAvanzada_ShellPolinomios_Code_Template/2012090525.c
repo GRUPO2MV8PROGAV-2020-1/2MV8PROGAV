@@ -28,6 +28,7 @@ void do_multiplicacion(Pol_Directory& the_directory,
                        string& op2,
                        string& var){
     /* INCLUDE REMAINING CODE HERE */
+    
 
    
 }
@@ -36,12 +37,19 @@ void do_multiplicacion(Pol_Directory& the_directory,
                        string& op1,
                        string& op2,
                        string& var){
+
 string operando1=op1;
 	string operando2=op2;
 	string string_pol_multiplicacion=var;
 #ifndef NDEBUG
-  cout<<"\nIniciando depuracion";
+  cout<<"\nIniciando depuracion\n";
 #endif /*NDEBUG*/
+
+#ifndef NDEBUG
+cout<<"\noperando1: "<<operando1;
+cout<<"\noperando2: "<<operando2;
+#endif /*NDEBUG*/
+
 
 	string coeffs1=the_directory.lookup_entry(operando1);
 	string coeffs2=the_directory.lookup_entry(operando2);
@@ -103,6 +111,7 @@ Polinomio PolOp2(arr2.size()-1,RacPt2);
 	string resultado=PolResult.string_show();
 
 	the_directory.add_or_change_entry(string_pol_multiplicacion,resultado);
+	
 	
 }
 #endif
