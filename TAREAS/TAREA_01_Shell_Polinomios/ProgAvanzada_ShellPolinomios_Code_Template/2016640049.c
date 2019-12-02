@@ -23,7 +23,35 @@ using std::cout;
 #define DISC00
 #ifdef DISC00
 /*Stub*/
-Polinomio composicion(Polinomio &pol1,Polinomio &pol2){
+Polinomio composicion(Pol_Directory& the_directory,
+                       string& op1,
+                       string& op2,
+                       string& var){
+	string operando1=op1;
+	string operando2=op2;
+	string string_pol_suma=var;
+#ifndef NDEBUG
+  cout<<"\nIniciando depuraci\\'on 2019.10.22\n";
+#endif /*NDEBUG*/
+
+	string coeffs1=the_directory.lookup_entry(operando1);
+	string coeffs2=the_directory.lookup_entry(operando2);
+#ifndef NDEBUG
+  cout<<"\ncoeffs1:"<<coeffs1<<endl;
+  cout<<"\ncoeffs2:"<<coeffs2<<endl;
+#endif /*NDEBUG*/
+
+	String_Tokenizer tokenizer1(coeffs1, ":");
+	String_Tokenizer tokenizer2(coeffs2, ":");
+	vector<string> arr1;
+	vector<string> arr2;
+	while(tokenizer1.has_more_tokens()){
+          arr1.push_back(tokenizer1.next_token());
+        }//end while()
+	while(tokenizer2.has_more_tokens()){
+          arr2.push_back(tokenizer2.next_token());
+        }//end while()
+//****************OPERACIONES**************
     int sizePol1,sizePol2;
     //ASIGNAR GRADO DE POLINOMIOS 
     Polinomio ss;
