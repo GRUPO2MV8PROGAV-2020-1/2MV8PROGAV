@@ -22,7 +22,7 @@ using std::cout;
 #ifdef DISC01
 /*Stub*/
 void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
-//Missing code
+     //Missing code
 }//end do_resta()
 #else
 void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var){
