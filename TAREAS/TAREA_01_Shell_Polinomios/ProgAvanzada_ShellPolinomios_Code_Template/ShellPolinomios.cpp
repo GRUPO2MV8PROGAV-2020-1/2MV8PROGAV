@@ -49,7 +49,7 @@ int main(int argc,char *argv[]){
     if(r=hay_equal_in_buf(buf)){
       if((!is_there_a_char_in_buf(buf,'+'))&&
          (!is_there_a_char_in_buf(buf,'-'))&&
-         (!is_there_a_char_in_buf(buf,'*'))
+         (!is_there_a_char_in_buf(buf,'*'))&&
 	 (!is_there_a_char_in_buf(buf,'/'))){
           get_var_name(buf,varname);
           ms=string(varname);/* ms contiene un nombre de variable polinomio */
@@ -117,11 +117,11 @@ int main(int argc,char *argv[]){
 
 	if (is_there_a_char_in_buf(buf,'/')){
           if ((fd=ms1.find("/"))!=std::string::npos) {
-		string_op1=ms1.substr(0,fd):
+		string_op1=ms1.substr(0,fd);
 		string_op2=ms1.substr(fd+1);
 	        fd=string_op1.find_first_not_of(' ');
 	        string_op1=string_op1.substr(fd);
-	        if ((fd=string_op1.find(' '))!=std::string::pos){
+	        if ((fd=string_op1.find(' '))!=std::string::npos){
 		  string_op1=string_op1.substr(0,fd);
 		}
       fd = string_op2.find_first_not_of(' ');
@@ -132,7 +132,7 @@ int main(int argc,char *argv[]){
 
 	}
          do_division(the_directory,string_op1,string_op2,ms);  
-      }
+	}}
     }/* if(r=hay_equal_in_buf(buf)) */
     if(!(r=hay_equal_in_buf(buf))){
       //printf("SO FAR SO GOOD!\n");

@@ -88,8 +88,10 @@ F1::f1(arr2);
 		       polinomio Polop2(arr2.size()-1,RacPt2);
 		       polinomio PolResult.string_show();
 
-		       the_directory.add_or_change_entry(string_pol_division,resultado);
-		       }//end do_division()
+		          the_directory.add_or_change_entry(string_pol_division,resultado);
+		     
+			
+   }//end do_division()
 #else
 
 void do_division(Pol_directory& the_directory,string& op1, string& op2,string& var){
@@ -104,7 +106,7 @@ void do_division(Pol_directory& the_directory,string& op1, string& op2,string& v
 
               else (poll1.size() > poll2.size()){
 	      
-	      
+	     for ()
 	      }	      
                	       
 }
