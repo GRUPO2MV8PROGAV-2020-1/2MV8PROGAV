@@ -68,6 +68,7 @@ public:
 	Rac *RacPt1=new Rac[arr1.size()],*RacPt2=new Rac[arr2.size()];
 	string stringIntNum,stringIntDen;
 	String_Tokenizer tokenizerForRac;
+	
 	for(int i=0;i<arr1.size();i++){
 		tokenizerForRac=String_Tokenizer(arr1[i],"/");
 		
@@ -83,10 +84,23 @@ public:
 		*(RacPt1+i)=Rac(num,den);
 	}
 	Polinomio PolOp1(arr1.size()-1,RacPt1);
-
-    /* INCLUDE REMAINING CODE HERE */
-
+	
+	for(int i=0;i<arr2.size();i++){
+		tokenizerForRac=String_Tokenizer(arr2[i],"/");
+		
+		stringIntNum=tokenizerForRac.next_token();
+		num=atoi(stringIntNum.c_str());
+		
+		stringIntDen=tokenizerForRac.next_token();
+		den=atoi(stringIntDen.c_str());
+#ifndef NDEBUG
+  cout<<"\ni="<<i<<":   num:"<<num<<",   den:"<<den<<endl;
+#endif /*NDEBUG*/
+		
+		*(RacPt2+i)=Rac(num,den);
+	}
 	Polinomio PolOp2(arr2.size()-1,RacPt2);
+
 	Polinomio PolResult=PolOp1+PolOp2;
 	string resultado=PolResult.string_show();
 
