@@ -95,6 +95,17 @@ F1::f1(arr2);
 void do_division(Pol_directory& the_directory,string& op1, string& op2,string& var){
                poll1=op1;
                poll2=op2;
+	       div = var;
+
+              if (poll1.size() < poll2.size()){
+                cout<<"La funcion de transferencia es: " <<poll1<<" / " <<poll2<<endl;
+
+	      }	
+
+              else (poll1.size() > poll2.size()){
+	      
+	      
+	      }	      
                	       
 }
 

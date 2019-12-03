@@ -27,6 +27,7 @@ string get_string_after_equal(char buf[TAMDBUF]);
 void do_suma(Pol_Directory& the_directory,string& op1,string& op2,string& var);
 void do_resta(Pol_Directory& the_directory,string& op1,string& op2,string& var);
 void do_multiplicacion(Pol_Directory& the_directory,string& op1,string& op2,string& var);
+void do_division(Pol_Directory& the_directory, string& op1, string& op2, string& var);
 
 int main(int argc,char *argv[]){
   char workspace[]="workspace.txt";
@@ -48,7 +49,8 @@ int main(int argc,char *argv[]){
     if(r=hay_equal_in_buf(buf)){
       if((!is_there_a_char_in_buf(buf,'+'))&&
          (!is_there_a_char_in_buf(buf,'-'))&&
-         (!is_there_a_char_in_buf(buf,'*'))){
+         (!is_there_a_char_in_buf(buf,'*'))
+	 (!is_there_a_char_in_buf(buf,'/'))){
           get_var_name(buf,varname);
           ms=string(varname);/* ms contiene un nombre de variable polinomio */
           get_coefici(buf,coefici,r);
@@ -112,6 +114,24 @@ int main(int argc,char *argv[]){
 
           do_multiplicacion(the_directory,string_op1,string_op2,ms);
         }
+
+	if (is_there_a_char_in_buf(buf,'/')){
+          if ((fd=ms1.find("/"))!=std::string::npos) {
+		string_op1=ms1.substr(0,fd):
+		string_op2=ms1.substr(fd+1);
+	        fd=string_op1.find_first_not_of(' ');
+	        string_op1=string_op1.substr(fd);
+	        if ((fd=string_op1.find(' '))!=std::string::pos){
+		  string_op1=string_op1.substr(0,fd);
+		}
+      fd = string_op2.find_first_not_of(' ');
+      string_op2=string_op2.substr(fd);
+          if ((fd=string_op2.find(' '))!=std::string::npos){
+	    string_op2=string_op2.substr(0,fd);
+       }	    
+
+	}
+         do_division(the_directory,string_op1,string_op2,ms);  
       }
     }/* if(r=hay_equal_in_buf(buf)) */
     if(!(r=hay_equal_in_buf(buf))){
