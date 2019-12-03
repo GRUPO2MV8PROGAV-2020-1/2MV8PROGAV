@@ -90,26 +90,53 @@ Polinomio composicion(Pol_Directory& the_directory,
 	
 	int newsize = sizePol1 * sizePol2;
 	Rac *ResPt = new Rac[newsize];
-	int num1,num2,den1,den2;
+	int num1[sizePol1],num2[sizePol2],den1[sizePol1],den2[sizePol2];
 	string stIntNum1,stIntDen1;
 	String_Tokenizer tkForRac1;
 	string stIntNum2,stIntDen2;
 	String_Tokenizer tkForRac2;
 	
-	for(int i=0;i<newsize;i++){
-		tkForRac1=String_Tokenizer(arr1[i],"/");
-		stIntNum1=tkForRac1.next_token();
-		num1=atoi(stIntNum1.c_str());
-		stIntDen1=tkForRac1.next_token();
-		den1=atoi(stIntDen1.c_str());
-		
+	//**********OBTENER COEFICIENTES DE POLINOMIOS
+	
+	
+	for(int i=0;i<sizePol2;i++) {
 		tkForRac2=String_Tokenizer(arr2[i],"/");
 		stIntNum2=tkForRac2.next_token();
-		num2=atoi(stIntNum2.c_str());
+		num2[i]=atoi(stIntNum2.c_str());
 		stIntDen2=tkForRac2.next_token();
-		den2=atoi(stIntDen2.c_str());
+		den2[i]=atoi(stIntDen2.c_str());
 		
+		tkForRac1=String_Tokenizer(arr1[i],"/");
+		stIntNum1=tkForRac1.next_token();
+		num1[i]=atoi(stIntNum1.c_str());
+		stIntDen1=tkForRac1.next_token();
+		den1[i]=atoi(stIntDen1.c_str());
+	}
+	
+	int sizeEvalp1=sizePol1;
+	int sizeEvalp2=sizePol2;
+	
+	int newN[newsize],newD[newsize],newP[newsize];
+	Polinomio arrPol[sizePol1];
+	*RacPtBuf=new Rac[sizePol2]
+	for(int i=0;i<) {
+		*(RacPtBuf + i)=Rac(1,1);
+	}
+	Polinomio polBuff(sizePol2-1,RacPtBuf);
+	Polinomio polBuffRst(sizePol2-1,RacPtBuf);
+	//************OPERACION DE ASIGANCION DE GRADO
+	for(int i=0;i<sizePol1;i++) {
 		
+		//int firstCiclo = 0;
+		for(int j=sizePol1-i;j>0;j--) {
+			/*if(i==0) {
+				newN[i] = pow(num2[i],)
+			}*/
+			polBuff = polBuff * PolOp2;
+			newN[i] = pow(num2[i],[newsize])
+		}
+		
+	
 		
 		//*(RacPt2+i)=Rac(num,den);
 	}
@@ -123,7 +150,7 @@ Polinomio composicion(Pol_Directory& the_directory,
 	
 	/*Polinomio PolOp1(arr1.size()-1,RacPt1);
 	Polinomio PolOp2(arr2.size()-1,RacPt2);*/
-    //ASIGNAR GRADO DE POLINOMIOS 
+    //ASIGNAR GRADO DE POLINOMIOS v0 
     Polinomio ss(newsize-1,ResPt);
     int m;
     for(int i=0;i<sizePol1;i++) {
