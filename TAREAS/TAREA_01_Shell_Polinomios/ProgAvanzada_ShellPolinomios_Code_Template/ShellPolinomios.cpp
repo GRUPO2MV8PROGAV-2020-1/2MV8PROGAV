@@ -109,6 +109,29 @@ int main(int argc,char *argv[]){
         if(is_there_a_char_in_buf(buf,'*')){
 
           /* INCLUDE REMAINING CODE HERE */
+	if(is_there_a_char_in_buf(buf,'*')){
+	 if((fd=ms1.find("*"))!=std::string::npos){
+	 string_op1=ms1.substr(0,fd);
+	 string_op2=ms1.substr(fd+1);
+	 fd=string_op1.find_first_not_of(' ');
+	 string_op1=string_op1.substr(fd);
+	 if((fd=string_op1.find(' '))!=std::string::npos){
+	   string_op1=string_op1.substr(0,fd);
+	 }
+	 fd=string_op1.find_first_not_of(' ');
+	 string_op2=string_op2.substr(fd);
+	 if((fd=string_op2.find(' '))!=std::string::npos)
+	 {
+		 string_op2=string_op2.substr(0,fd);
+	 }
+	 
+	 
+	 
+	 
+	 }
+
+
+	}
 
           do_multiplicacion(the_directory,string_op1,string_op2,ms);
         }
