@@ -58,7 +58,7 @@ void do_derivar(Pol_Directory& the_directory,
 	Polinomio PolResult[i]=der[i];
 	}
 	string resultado=PolResult.string_show();
-	the_directory.add_or_change_entry(string_pol_resta,resultado);	
+	the_directory.add_or_change_entry(string_pol_derivar,resultado);	
 }
 
 #endif
