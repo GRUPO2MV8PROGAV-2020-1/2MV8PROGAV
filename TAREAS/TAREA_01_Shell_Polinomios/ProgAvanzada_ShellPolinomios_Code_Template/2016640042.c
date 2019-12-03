@@ -50,8 +50,13 @@ bool comp(std::string& comand_line){    //PRIMERO DETECTAMOS LOS STRINGS INTRODU
 	  }
 	if(r=rhay_equal_in_buf(but)){
 	  if((!is_there_a_char_in_buf(buf,'comp')){  //DETECTAMOS SI ES UNA LLAMADA A "COMP"
-
-	public static class StringExtensions
+      get_var_name(buf,varname);
+          ms=string(varname);/* ms contiene un nombre de variable polinomio */
+          get_coefici(buf,coefici,r);
+          coeficients=string(coefici);
+          ST0=String_Tokenizer(coeficients,",");
+          
+	public static class StringExtensions //ANALIZAMOS LOS CASOS TECLEADOS POR EL USUARIO
 {:
 	switch (comp.ToLower()){
 		case "comp";
